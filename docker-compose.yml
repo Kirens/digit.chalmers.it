@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    image: digit_page:dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/frontend/src
+      - ./dist:/frontend/dist
