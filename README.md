@@ -1,2 +1,2 @@
 # DigIT page
-See: http://www.digit.chalmers.it
+See: https://www.digit.chalmers.it
