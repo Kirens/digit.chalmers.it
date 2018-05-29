@@ -1,1 +1,2 @@
-# digit.chalmers.it
+# DigIT page
+See: https://www.digit.chalmers.it
