@@ -1,0 +1,32 @@
+version: "2"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: dev.backend.Dockerfile
+    image: webit_backend:dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/backend_dev
+      - /backend_dev/node_modules
+    links:
+      - "mongo"
+    environment:
+      - NODE_ENV=development
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  frontend:
+    build:
+      context: ..
+      dockerfile: WebIT/dev.frontend.Dockerfile
+    image: webit_frontend:dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend/app:/docker/frontend/app
