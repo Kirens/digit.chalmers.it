@@ -1,0 +1,9 @@
+version: "3.4"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: digit_page:prod
+    ports:
+      - "8080:8080"
